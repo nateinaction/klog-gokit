@@ -191,3 +191,9 @@ func KRef(namespace, name string) ObjectRef {
 		Namespace: namespace,
 	}
 }
+
+// LoggerWithName() drops the name argument because klog has no ability to
+// retrieve the existing key and append the argument to it.
+func LoggerWithName(logger Logger, _ string) Logger {
+	return logger
+}
