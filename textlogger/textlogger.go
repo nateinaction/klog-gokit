@@ -80,7 +80,7 @@ func (l *tlogger) WithValues(kvList ...interface{}) logr.LogSink {
 }
 
 func (l *tlogger) WriteKlogBuffer(data []byte) {
-	l.config.output.Write(data)
+	_, _ = l.config.output.Write(data)
 }
 
 var _ logr.LogSink = &tlogger{}
