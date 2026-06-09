@@ -54,7 +54,7 @@ func (l *tlogger) print(severity string, msg string, kvList []interface{}) {
 		args = append(args, fmt.Sprintf(" %s=%q", allKV[i], fmt.Sprint(allKV[i+1])))
 	}
 	args = append(args, "\n")
-	fmt.Fprint(l.config.output, args...)
+	_, _ = fmt.Fprint(l.config.output, args...)
 }
 
 func (l *tlogger) WithCallDepth(depth int) logr.LogSink {
